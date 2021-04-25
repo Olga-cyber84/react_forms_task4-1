@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+input {
+  width: 220px;
+  height: 52px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.output {
+  width: 220px;
+  height: 52px;
+  text-align: center;
+  padding-top: 12px;
+  border: solid gray 2px;
+  box-sizing: border-box;
+  background-color: white;
+}
