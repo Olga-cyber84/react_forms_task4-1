@@ -21,8 +21,10 @@ function Converter(props) {
     const handleChange = ({target}) => {        
         setValueHEX(()=> target.value);
         target.value.length === 7 && target.value.substring(0,1) === "#"
-        ? isHex(target.value.substring(1,7)) ? setValueRGB(() => convertColor(valueHEX)) : setValueRGB(() => "Ошибка!")
-        : setValueRGB(() => "")
+        ? isHex(target.value.substring(1,7))
+            ? setValueRGB(() => convertColor(valueHEX)) : setValueRGB(() => "Ошибка!")
+        : target.value.length > 7 || (target.value.length === 7 && target.value.substring(0,1) !== "#")
+            ? setValueRGB(() => "Ошибка!") : setValueRGB(() => "")
     }
     const bgColor = valueRGB !== "" ? (valueRGB === "Ошибка!" ? "red" : valueRGB) : "";
 
